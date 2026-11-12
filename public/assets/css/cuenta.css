@@ -1,0 +1,227 @@
+/* ============================================
+   SFES Luxury — Mi Cuenta / Mis Pedidos
+   Mismo lenguaje visual que carrito.css (tema claro,
+   tarjetas blancas sobre fondo marfil) para que la zona
+   de cuenta se sienta parte del mismo recorrido de compra.
+   ============================================ */
+
+body {
+    background: var(--marfil);
+    color: var(--azul-oscuro);
+}
+
+.cuenta-header {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto 10px;
+    text-align: center;
+}
+
+.cuenta-eyebrow {
+    display: inline-block;
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.cuenta-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: var(--azul-oscuro);
+    margin-bottom: 8px;
+}
+
+.cuenta-header p { color: var(--text-muted); }
+
+.btn-gold {
+    display: inline-block;
+    border: none;
+    background: var(--dorado);
+    color: var(--blanco);
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    letter-spacing: .3px;
+    cursor: pointer;
+    transition: .3s;
+    text-align: center;
+    font-family: inherit;
+}
+.btn-gold:hover { background: var(--dorado-hover); }
+
+.btn-secundario {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 2px solid var(--dorado);
+    background: transparent;
+    color: var(--dorado-hover);
+    font-size: 13.5px;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+}
+.btn-secundario:hover { background: var(--dorado); color: var(--blanco); }
+
+.cuenta-main {
+    width: 90%;
+    max-width: 640px;
+    margin: 30px auto 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.cuenta-main--ancho { max-width: 820px; }
+
+.cuenta-card {
+    background: var(--blanco);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.cuenta-card-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dorado);
+}
+
+.cuenta-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-top: 8px; }
+.cuenta-card-sub { color: var(--text-muted); font-size: 13.5px; margin: 6px 0 20px; }
+
+.cuenta-perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.cuenta-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--dorado-light), var(--dorado));
+    color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.cuenta-nombre { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; }
+.cuenta-email { font-size: 13px; color: var(--text-muted); }
+
+.cuenta-acciones {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.btn-salir { color: #c0392b; border-color: rgba(192,57,43,.3); }
+.btn-salir:hover { background: #c0392b; color: var(--blanco); border-color: #c0392b; }
+
+/* Campos de formulario (dirección de envío) */
+.campo { margin-bottom: 14px; }
+.campo label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+}
+.campo input:focus,
+.campo textarea:focus { outline: none; border-color: var(--dorado); }
+
+.msg { padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 12px; }
+.msg.error { background: #fdecea; color: #c0392b; }
+.msg.success { background: #e8f5e9; color: #1b5e20; }
+
+/* ===========================
+MIS PEDIDOS
+=========================== */
+
+.cuenta-vacio {
+    text-align: center;
+    padding: 70px 20px;
+    background: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+.cuenta-vacio-icono { font-size: 48px; margin-bottom: 14px; }
+.cuenta-vacio-titulo { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--azul-oscuro); margin-bottom: 8px; }
+.cuenta-vacio-sub { color: var(--text-muted); margin-bottom: 26px; }
+
+.pedidos-lista { display: flex; flex-direction: column; gap: 16px; }
+
+.pedido-card {
+    background: var(--blanco);
+    border-radius: 18px;
+    padding: 22px 26px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+.pedido-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.pedido-num { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.pedido-nombre { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; margin-top: 2px; }
+.pedido-fecha { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+
+.pedido-card-right { text-align: right; }
+.pedido-total { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 700; color: var(--azul-oscuro); margin-top: 6px; }
+
+.badge-pedido {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 999px;
+}
+.badge-pedido--pendiente  { background: #C9A45C22; color: var(--dorado-hover); }
+.badge-pedido--confirmado { background: #27ae6022; color: #1e8449; }
+.badge-pedido--procesando { background: #2980b922; color: #1f618d; }
+.badge-pedido--enviado    { background: #8e44ad22; color: #6c3483; }
+.badge-pedido--entregado  { background: #16a08522; color: #0e6655; }
+.badge-pedido--cancelado  { background: #c0392b22; color: #922b21; }
+
+.pedido-direccion {
+    background: var(--marfil);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--azul-oscuro);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 600px) {
+    .cuenta-card { padding: 24px; }
+    .pedido-card-top { flex-direction: column; }
+    .pedido-card-right { text-align: left; }
+}

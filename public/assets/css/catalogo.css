@@ -1,0 +1,166 @@
+/* ============================================
+   SFES Luxury — Catálogo (catalogo/index.php)
+   Estilos exclusivos de esta página. El header, el
+   buscador, los iconos y el footer viven ahora en
+   layout.css (compartido con el resto del sitio).
+   ============================================ */
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--blanco);
+    color:var(--azul-oscuro);
+}
+
+/* ===========================
+BANNER
+=========================== */
+
+.banner{
+    background:linear-gradient(135deg,var(--marfil),var(--gris-perla));
+    text-align:center;
+    padding:70px 20px;
+}
+
+.banner h2{
+    font-size:55px;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--azul-oscuro);
+}
+
+.banner p{
+    margin-top:15px;
+    color:var(--text-muted);
+    font-size:18px;
+}
+
+/* ===========================
+CATEGORÍAS
+=========================== */
+
+.categorias{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:40px;
+    flex-wrap:wrap;
+}
+
+.categoria{
+    border:none;
+    background:var(--blanco);
+    padding:12px 28px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:500;
+    box-shadow:0 5px 10px rgba(0,0,0,.05);
+}
+
+.categoria:hover,
+.categoria.activa{
+    background:var(--dorado);
+    color:var(--blanco);
+}
+
+/* ===========================
+PRODUCTOS
+=========================== */
+
+.productos{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-bottom:60px;
+    min-height:200px;
+}
+
+.card{
+    background:var(--blanco);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.info{
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.info h3{
+    font-size:28px;
+    margin-bottom:10px;
+    font-family:'Cormorant Garamond',serif;
+    min-height:68px;
+}
+
+.info .categoria-tag{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--dorado);
+    margin-bottom:8px;
+}
+
+.info h4{
+    color:var(--dorado);
+    margin:15px 0;
+    font-size:24px;
+}
+
+.info button,
+.info a.agregar-carrito{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:14px;
+    border:none;
+    background:var(--dorado);
+    color:var(--blanco);
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:auto;
+}
+
+.info button:hover,
+.info a.agregar-carrito:hover{
+    background:var(--dorado-hover);
+}
+
+.sin-resultados{
+    grid-column:1/-1;
+    text-align:center;
+    color:var(--text-muted);
+    padding:40px 0;
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:600px){
+    .banner h2{
+        font-size:38px;
+    }
+    .banner p{
+        font-size:15px;
+    }
+}

@@ -1,0 +1,236 @@
+/* ============================================
+   SFES Luxury — Página de inicio (home/index.php)
+   Estilos exclusivos de esta página. El header, la
+   barra superior, el nav y el footer viven ahora en
+   layout.css (compartido con el resto del sitio).
+   ============================================ */
+
+body{
+    background:var(--blanco);
+    color:var(--azul-oscuro);
+}
+
+/*======================
+HERO
+======================*/
+
+.hero{
+    width:90%;
+    margin:45px auto;
+    background:var(--marfil);
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px;
+    overflow:hidden;
+}
+
+.texto{
+    width:45%;
+}
+
+.texto h3{
+    color:var(--dorado);
+    text-transform:uppercase;
+    margin-bottom:20px;
+    letter-spacing:2px;
+}
+
+.texto h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:80px;
+    line-height:80px;
+    margin-bottom:25px;
+    color:var(--azul-oscuro);
+}
+
+.texto p{
+    font-size:19px;
+    margin-bottom:35px;
+}
+
+.texto button,
+.texto a{
+    display:inline-block;
+    border:none;
+    background:var(--dorado);
+    color:var(--blanco);
+    padding:17px 38px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.texto button:hover,
+.texto a:hover{
+    background:var(--dorado-hover);
+}
+
+.imagen{
+    width:50%;
+    text-align:right;
+}
+
+.imagen img{
+    width:100%;
+    max-width:620px;
+    margin-left:auto;
+    border-radius:20px;
+}
+
+/*======================
+TITULO
+======================*/
+
+.titulo{
+    text-align:center;
+    margin:60px 0 40px;
+}
+
+.titulo h2{
+    font-size:50px;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--azul-oscuro);
+}
+
+/*======================
+PRODUCTOS DESTACADOS
+======================*/
+
+.productos{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.card{
+    background:var(--blanco);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.info{
+    padding:25px;
+}
+
+.info h3{
+    font-size:34px;
+    font-family:'Cormorant Garamond',serif;
+    margin-bottom:12px;
+}
+
+.info p{
+    color:var(--text-muted);
+    margin-bottom:18px;
+}
+
+.info h4{
+    color:var(--dorado);
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.info button,
+.info a{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:15px;
+    border:2px solid var(--dorado);
+    background:transparent;
+    color:var(--dorado);
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.info button:hover,
+.info a:hover{
+    background:var(--dorado);
+    color:var(--blanco);
+}
+
+/*======================
+BENEFICIOS
+======================*/
+
+.beneficios{
+    width:90%;
+    margin:70px auto;
+    background:var(--blanco);
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+    padding:40px;
+    gap:20px;
+}
+
+.beneficios i{
+    font-size:40px;
+    color:var(--dorado);
+    margin-bottom:18px;
+}
+
+.beneficios h4{
+    margin-bottom:10px;
+    color:var(--azul-oscuro);
+}
+
+.beneficios p{
+    color:var(--text-muted);
+}
+
+/*======================
+RESPONSIVE
+======================*/
+
+@media(max-width:1000px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+    .texto,
+    .imagen{
+        width:100%;
+    }
+    .texto{
+        margin-bottom:40px;
+    }
+    .productos{
+        grid-template-columns:1fr;
+    }
+    .beneficios{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+    .texto h1{
+        font-size:55px;
+        line-height:60px;
+    }
+    .titulo h2{
+        font-size:38px;
+    }
+    .beneficios{
+        grid-template-columns:1fr;
+    }
+}

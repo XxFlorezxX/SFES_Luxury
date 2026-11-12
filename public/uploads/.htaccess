@@ -1,0 +1,22 @@
+# ============================================================
+#  Carpeta de archivos subidos por el administrador.
+#
+#  Aquí solo deben servirse imágenes. Esta regla impide que un
+#  archivo subido pueda ejecutarse como código en el servidor,
+#  incluso si alguien lograra colar uno con extensión engañosa.
+# ============================================================
+
+# Nada de ejecutar scripts en esta carpeta
+<FilesMatch "\.(php|php3|php4|php5|php7|php8|phtml|phar|pl|py|cgi|sh|asp|aspx|jsp|htaccess)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8
+
+Options -Indexes -ExecCGI
+AddType text/plain .php .phtml

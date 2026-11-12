@@ -1,0 +1,436 @@
+/* ============================================
+   SFES LUXURY — Contacto
+   ============================================ */
+
+
+
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a   { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; }
+
+/* ══════════════════════════════════════════
+   LAYOUT PRINCIPAL — dos columnas
+══════════════════════════════════════════ */
+.contacto-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ── Columna izquierda: info ─────────────── */
+.contacto-info {
+  background: var(--surface);
+  border-right: var(--rule);
+  padding: 6rem 4rem 5rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texto fantasma decorativo de fondo */
+.contacto-info::before {
+  content: 'SFES';
+  position: absolute;
+  bottom: -2rem;
+  left: -1rem;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 16vw, 14rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(201, 168, 76, 0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.info-top { display: flex; flex-direction: column; gap: 0; }
+
+.info-eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.contacto-info h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--ivory);
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+.contacto-info h1 em {
+  display: block;
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.info-lead {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--ivory-dim);
+  line-height: 2;
+  max-width: 340px;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--gold);
+}
+
+/* Datos de contacto */
+.info-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 4rem;
+}
+
+.dato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: var(--rule);
+}
+.dato-item:first-child { border-top: var(--rule); }
+
+.dato-icon {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.dato-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.dato-valor {
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--ivory-dim);
+  line-height: 1.6;
+}
+
+.dato-valor a {
+  transition: color var(--transition);
+}
+.dato-valor a:hover { color: var(--gold); }
+
+/* Redes sociales */
+.info-redes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.red-link {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ivory-dim);
+  transition: border-color var(--transition), color var(--transition);
+}
+.red-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Columna derecha: formulario ─────────── */
+.contacto-form-col {
+  background: var(--black);
+  padding: 6rem 5vw 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Compatibilidad con el HTML original (.form-container) */
+.form-container {
+  background: var(--black);
+  padding: 6rem 2.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form-header { margin-bottom: 3rem; }
+
+.form-header .form-eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form-header h2,
+.form-container h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--ivory);
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--ivory-dim);
+  line-height: 1.9;
+}
+
+/* ── Formulario ──────────────────────────── */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Fila de dos campos */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+}
+
+/* Grupo de campo con label */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+.form-field label {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  padding: 1rem 1rem 0.4rem;
+  background: var(--surface-2);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-bottom: none;
+  transition: color var(--transition);
+}
+
+.form-field:focus-within label {
+  color: var(--gold);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 0.75rem 1rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-top: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.32);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  outline: none;
+  transition: border-color var(--transition), background var(--transition);
+  -webkit-appearance: none;
+}
+
+/* Inputs sin wrapper .form-field (HTML original) */
+form > input[type="text"],
+form > input[type="email"] {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  outline: none;
+  margin-bottom: 1px;
+  transition: border-color var(--transition), background var(--transition);
+  -webkit-appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(184, 173, 152, 0.38);
+  letter-spacing: 0.1em;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold) !important;
+  background: var(--surface-2);
+  outline: none;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: rgba(184, 173, 152, 0.2);
+}
+
+/* Autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 100px var(--surface-2) inset;
+  -webkit-text-fill-color: var(--ivory);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  padding: 1rem;
+  background: var(--surface-2);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  resize: vertical;
+  min-height: 160px;
+  outline: none;
+  margin-bottom: 1px;
+  transition: border-color var(--transition), background var(--transition);
+  -webkit-appearance: none;
+}
+
+/* ── Contador de caracteres ──────────────── */
+.char-count {
+  text-align: right;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-dim);
+  margin-bottom: 2rem;
+  margin-top: 0.4rem;
+}
+
+/* ── Botón enviar ────────────────────────── */
+.btn-gold {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color var(--transition);
+  margin-top: 0.5rem;
+}
+
+/* Relleno dorado que sube desde abajo */
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.btn-gold span,
+.btn-gold:not(:has(span)) {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-gold:hover { color: var(--black); }
+.btn-gold:hover::before { transform: translateY(0); }
+.btn-gold:active::before { background: var(--gold-light); }
+
+/* Nota de privacidad */
+.form-note {
+  margin-top: 1.25rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: rgba(184, 173, 152, 0.5);
+  text-align: center;
+  line-height: 1.8;
+}
+
+.form-note a {
+  color: var(--gold-dim);
+  border-bottom: 1px solid rgba(138, 111, 46, 0.3);
+  padding-bottom: 1px;
+  transition: color var(--transition);
+}
+.form-note a:hover { color: var(--gold); }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .contacto-wrap {
+    grid-template-columns: 1fr;
+  }
+  .contacto-info {
+    border-right: none;
+    border-bottom: var(--rule);
+    padding: 5rem 2.5rem 4rem;
+  }
+  .contacto-info::before { display: none; }
+  .contacto-form-col {
+    padding: 4rem 2.5rem 5rem;
+  }
+  .info-datos { margin-top: 3rem; }
+}
+
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contacto-info  { padding: 5rem 1.5rem 3.5rem; }
+  .contacto-form-col { padding: 3.5rem 1.5rem 4rem; }
+  .form-container { padding: 5rem 1.5rem; }
+  .info-redes { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-gold::before { display: none; }
+  .btn-gold:hover { background: var(--gold); color: var(--black); }
+}

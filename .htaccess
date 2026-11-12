@@ -1,0 +1,30 @@
+# ============================================================
+#  SFES Luxury — .htaccess de la RAÍZ del proyecto (XAMPP)
+#
+#  Permite abrir la tienda en  http://localhost/SFES_Luxury/
+#  sin escribir /public/, y bloquea el acceso desde el navegador
+#  a todo lo que NO debe ser público (.env, app/, config/,
+#  database/, storage/).
+#
+#  Requiere mod_rewrite (en XAMPP viene activo por defecto).
+# ============================================================
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1) Carpetas y archivos privados → 403 Prohibido
+    RewriteRule ^(app|config|database|storage|vendor)(/.*)?$ - [F,L]
+    RewriteRule (^|/)\.(env|git) - [F,L]
+    RewriteRule \.(sql|log|md|lock|example|sqlite)$ - [F,L]
+
+    # 2) Todo lo demás se sirve desde public/
+    RewriteRule ^$ public/ [L]
+    RewriteRule ^((?!public/).*)$ public/$1 [L]
+</IfModule>
+
+# Respaldo por si mod_rewrite estuviera apagado
+<FilesMatch "^\.|\.(env|sql|log|md|lock|example|sqlite)$">
+    Require all denied
+</FilesMatch>

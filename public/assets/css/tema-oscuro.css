@@ -1,0 +1,31 @@
+/* ============================================
+   SFES Luxury — Tema oscuro (Azul Noche & Oro)
+   Antes duplicado de forma identica dentro de:
+   contacto.css, registro.css, sobrenos.css, login.css
+   y colecciones.css. Ahora vive en un solo lugar.
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --black:      #061C2E;  /* Azul noche */
+  --surface:    #0A2C49;  /* Panel navy nivel 1 */
+  --surface-2:  #0C3A60;  /* Panel navy nivel 2 */
+  --gold:       #C9A45C;  /* Dorado elegante */
+  --gold-light: #D7C195;  /* Dorado claro */
+  --gold-dim:   #B08B42;  /* Dorado atenuado */
+  --ivory:      #F8F4EC;  /* Marfil */
+  --ivory-dim:  #C2B594;  /* Marfil atenuado */
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', system-ui, sans-serif;
+
+  --rule: 1px solid rgba(201, 164, 92, 0.22);
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.tema-oscuro {
+  background-color: var(--black);
+  color: var(--ivory);
+  font-family: var(--font-body);
+}

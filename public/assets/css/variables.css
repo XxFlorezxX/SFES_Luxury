@@ -1,0 +1,42 @@
+/* ============================================
+   SFES Luxury — Paleta de marca (Azul Noche & Oro)
+   Fuente unica de verdad para colores. Usado por el
+   panel de administracion y, desde ahora, disponible
+   para todo el sitio publico (ver layout.css).
+   ============================================ */
+
+:root {
+  /* Colores de marca (brutos) */
+  --azul-noche:   #061C2E;  /* Encabezado, nav, footer, barra de confianza */
+  --azul-surface: #0A2C49;  /* Panel navy secundario (sobre azul-noche) */
+  --azul-oscuro:  #10283D;  /* Titulos y textos sobre fondo claro */
+  --dorado:       #C9A45C;  /* Botones, logo, iconos, detalles */
+  --dorado-light: #DCC495;  /* Acentos dorados suaves */
+  --dorado-hover: #AE873A;  /* Hover de botones/enlaces dorados */
+  --marfil:       #F8F4EC;  /* Fondo principal / banners */
+  --gris-perla:   #E8E3DA;  /* Fondos secundarios */
+  --blanco:       #FFFFFF;  /* Tarjetas de producto */
+
+  /* Fondo general y contenedores (tema claro / admin) */
+  --bg-primary: var(--marfil);       /* Blanco marfil */
+  --bg-surface: var(--blanco);       /* Blanco puro */
+  --bg-secondary: var(--gris-perla); /* Gris perla para contrastes */
+
+  /* Textos y Bordes */
+  --text-main: var(--azul-oscuro);   /* Azul oscuro elegante */
+  --text-muted: #3F617E;             /* Azul-gris neutro */
+  --border-color: #DCD5C7;           /* Borde crema/marfil */
+
+  /* Acentos Dorados (alias retro-compatibles) */
+  --gold-primary: var(--dorado);     /* Dorado principal */
+  --gold-light: var(--dorado-light); /* Dorado suave */
+  --gold-hover: var(--dorado-hover); /* Dorado interactivo */
+
+  /* Sombras */
+  --shadow-soft: 0 4px 20px rgba(6, 28, 46, 0.08);
+}
+
+body.tema-claro {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}

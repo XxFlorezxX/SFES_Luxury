@@ -1,0 +1,49 @@
+# ============================================================
+#  SFES Luxury — Reescritura de URLs y reglas de servidor
+# ============================================================
+
+# ── URLs limpias ────────────────────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si el archivo o carpeta existe realmente (css, js, imágenes) se sirve tal cual.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Todo lo demás pasa por el front controller.
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# ── No listar el contenido de las carpetas ──────────────────
+Options -Indexes
+
+# ── Bloquear acceso a archivos sensibles ────────────────────
+<FilesMatch "^\.(env|git|htaccess)|\.(sql|log|md|json|lock)$">
+    Require all denied
+</FilesMatch>
+
+# ── Cabeceras de seguridad (respaldo de las que envía PHP) ──
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always unset X-Powered-By
+</IfModule>
+
+# ── Caché de recursos estáticos (rendimiento) ───────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css              "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/png             "access plus 30 days"
+    ExpiresByType image/jpeg            "access plus 30 days"
+    ExpiresByType image/webp            "access plus 30 days"
+    ExpiresByType image/svg+xml         "access plus 30 days"
+    ExpiresByType font/woff2            "access plus 1 year"
+</IfModule>
+
+# ── Compresión ──────────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
